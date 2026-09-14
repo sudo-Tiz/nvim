@@ -5,7 +5,6 @@ return {
     opts = require "configs.conform",
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -16,10 +15,23 @@ return {
   { 
     "windwp/nvim-autopairs",
     enabled = false,
-},
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
+  },
 
+  -- replace nvim-cmp with blink
+  { import = "nvchad.blink.lazyspec" },
+  {
+    "saghen/blink.cmp",
+    opts = {
+      completion = {
+        list = {
+          selection = {
+            preselect = false,
+            auto_insert = false,
+          },
+        },
+      },
+    },
+  }   
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
